@@ -193,6 +193,18 @@ header.site-header{
   .redact-bar{ animation:none; display:none; }
 }
 
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:48px;
+  align-items:center;
+}
+@media (max-width:820px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-grid > div:last-child{ order:-1; }
+  .hero-grid img{ max-width:200px !important; }
+}
+
 /* ---------- buttons / CTA ---------- */
 .btn{
   display:inline-flex;
@@ -371,7 +383,15 @@ h2.section-title{
   gap:12px;
   align-items:center;
   transform:rotate(var(--r,0deg));
+  text-decoration:none;
+  color:var(--ink);
+  transition:background .15s, border-color .15s;
 }
+a.clip:hover{
+  background:var(--paper-dark);
+  border-color:var(--brass);
+}
+a.clip:hover span:first-child{ text-decoration:underline; }
 .clip .tag{
   font-size:10.5px;
   letter-spacing:.06em;
